@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue组件</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+<!--vue组件是为了不重复那么多的js代码,代码复用，把组件写在js中，在html中调用-->
+<div id="app">
+    <my-component></my-component><!--组件的复用-->
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-zujian></my-zujian><!--调用一个局部组件，在app2里面就不能调用-->
+</div>
+
+<div id="app2">
+    <my-component></my-component><!--也可以在js中写template:'<my-component></my-component>',-->
+    <!--<my-zujian></my-zujian>--><!--这个是app的局部组件，在这里不能调用，会报错-->
+</div>
+<script src="../js/vue-组件.js"></script>
+</body>
+</html>

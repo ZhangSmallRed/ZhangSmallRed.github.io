@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue动态改变样式</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link href="../css/vue-4.css" type="text/css" rel="stylesheet"/>
+</head>
+
+<body>
+<!--vue动态改变样式的两种方式，1、改变class类 2、改变内联style样式-->
+  <div id="app">
+    <!--第一种，通过改变class类改变样式，写一个键值对形式的class，第一个是类名，第二个是值，值为true就用这个类，flase就不用这个类，多个类用逗号隔开-->
+    
+    <div class="sh" @click="gaibian=!gaibian" :class="{yuan:gaibian,lanse:!gaibian}"></div> 
+    <!--如果有许多的类也会很麻烦，所以我们可以定义在js里面需要用到计算属性，在页面上如下列写法-->
+    <div class="sh" @click="gaibian=!gaibian"  :class="divClass"></div>
+    <div class="sh" @click="gaibian=!gaibian"  :class="color">
+    </div>
+    <p>{{gaibian}}</p>
+  </div>
+  
+  <!--第二种，改变style属性-->
+  <div id="app2">
+    <div class="sh" :style="{backgroundColor:color,width:kuan}"></div>
+    <!--如果有许多的样式也会很麻烦，所以我们可以定义在js里面需要用到计算属性，在页面上如下列写法-->
+    <div class="sh" :style="divStyle"></div>
+    <!--两者结合的一种写法-->
+    <div class="sh" :style="[divStyle,{height:gao}]"></div>
+  </div>
+<script src="../js/vue-4.js"></script>
+</body>
+</html>

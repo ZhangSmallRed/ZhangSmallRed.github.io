@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue-父子间组件通信</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="app"><!--给id=app的添加一个Vue-->
+    <my-zi :fu="list" :fu2="list2"></my-zi><!--需要在组件中声明一个属性名fu，属性值list，list是从父级组件中拿出的数据-->
+</div>
+<script src="../js/vue-组件通信.js"></script>
+</body>
+</html>

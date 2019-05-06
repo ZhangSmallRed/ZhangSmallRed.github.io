@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    <input @input="changetype"/>
+        <p v-if="password.length>8">你的密码大于8位啦</p>
+        <p v-else-if="password.length <= 8 && password.length > 0">请输入一个更长的密码</p>
+        <p v-else>请输入你的密码</p>
+        <ol>
+            <li v-for="item in cate" :key="item.name">
+                {{ item.name }}
+                <ul>
+                    <li v-for="sub in item.sub" :key="sub">{{ sub }}</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                password: '',
+                cate: [{
+                    name: 'js', sub: ['vue','jq','react']
+                },{
+                    name: 'Databases', sub: ['Mysql','Oracle','MongoDB']
+                },{
+                    name: 'os', sub: ['macOS','Windows','Linux']
+                }]
+            },
+			methods:{
+				changetype:function(e){
+					this.password=e.target.value;
+					}
+			}
+        })
+    </script>
+</body>
+</html>

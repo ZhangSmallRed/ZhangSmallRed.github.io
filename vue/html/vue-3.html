@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue计算属性</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <!--<input type="text" v-model="value"/>//v-model实现一个双向绑定-->
+  <button @click="jiayi">加一</button>
+  <button v-on:click="jianyi">减一</button>
+  <p>{{value}}</p>
+  <p>{{bijiao()}}|{{output}}|{{value3}}</p>
+</div>
+<script src="../js/vue-3.js"></script>
+</body>
+</html>

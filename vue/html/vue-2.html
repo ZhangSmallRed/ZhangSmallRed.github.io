@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue双向绑定</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<link href="../css/vue-2.css"/>
+</head>
+
+<body>
+<div class="app">
+<button v-on:click="jiayi">点击加1</button><!--定义一个点击执行jiayi函数的事件-->
+<button @click="jianyi">点击减1</button><!--v-on:click=""完全可以把v—on：写成@-->
+<p>{{count}}</p><!--输出count-->
+<p>{{count>5?"大于5":"小于或等于5"}}</p><!--双大括号里面可以写简单的三木运算符-->
+<p>知识点1：双向帮定</p>
+单向绑定：
+<input type="text" v-bind:value="value" v-on:input="input"/><!--只能单向的改变输入框的初始值-->
+<!--需要v-on:input="input"这样通过input函数让每次输入时改变p标签中的值-->
+<p>{{value}}</p>
+双向绑定：
+<input type="text" v-model="value"/><!--通过v-model可以实现双向绑定，不需要函数渲染页面-->
+<p>{{value}}</p>
+</div>
+<script src="../js/vue-2.js"></script>
+</body>
+</html>

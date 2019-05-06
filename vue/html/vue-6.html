@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue单选双选</title>
+<link href="../css/vue-6.css" type="text/css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="radio" v-model="dan" value="yi" id="diyi"/><label for="diyi">选项1</label>
+        <!--label中的for对应input中的id，点击“选项1”input中id=“第一”的获得焦点-->
+        <input type="radio" v-model="dan" value="er" id="dier"/><label for="dier">选项2</label>
+        <input type="radio" v-model="dan" value="san" id="disan"/><label for="disan">选项3</label>
+        <p>你选择的是{{dan}}</p>
+        <input type="checkbox" v-model="fu" value="yi" id="fudiyi"/><label for="fudiyi">复选框：选项1</label>
+        <input type="checkbox" v-model="fu" value="er" id="fudier"/><label for="fudier">复选框：选项2</label>
+        <input type="checkbox" v-model="fu" value="san" id="fudisan"/><label for="fudisan">复选框：选项3</label>
+        <p>你选择的是{{fu}}</p>
+        <select v-model="selected"><!--单选下拉框，selected在没有value的情况下会匹配option的值-->
+            <option>11</option>
+            <option>22</option>
+            <option>33</option>
+        </select>
+        <p>你选择的是{{selected}}</p>
+        <select v-model="selected2"><!--单选下拉框，selected在没有value的情况下会匹配option的值-->
+            <option>11</option>
+            <option>22</option>
+            <option>33</option>
+        </select>
+        <p>你选择的是{{selected2}}</p>
+        
+        <p>{{date}}</p>
+        
+        
+        <p>v-model的修饰符</p>
+        <input v-model.lazy="message"/><!--.lazy是在失去焦点或者按回车时触发-->
+        <p>{{message}}</p>
+        <input v-model.number="message2"/><!--.number是将输入的专为数字类型-->
+        <p>{{message2}}</p>
+        <input v-model.trim="message3"/><!--.trim是自动过滤输入的首位空格-->
+        <p>{{message3}}</p>
+    </div>
+
+<script src="../js/vue-6.js"></script>
+</body>
+</html>

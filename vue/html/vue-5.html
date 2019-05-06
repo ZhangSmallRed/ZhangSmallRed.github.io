@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>vue条件循环语句</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+<div class="tiaojian"><!--声明3个p标签，通过计算不让他们3个同时显示-->
+   <p v-if="shu>10">还有{{shu}}个资源</p><!--创建一个v-if，如果值为true，就显示，如果为flase就不显示此标签-->
+   <p v-else-if="shu<=10&&shu>=1">快没资源了</p><!--v-if是把不需要的标签直接去掉，而不是隐藏起来-->
+   <p v-else>已经没资源了</p>
+   <template v-if="show"><!--这个标签既可以把多个标签包含在一起，又不会改变dom节点,审查元素看不到这个标签-->
+     <p>我是第一个p</p>
+     <p>我是第二个p</p>
+   </template>
+   <p v-show="true">我用的是v-show属性，v-show没有把dom节点去掉，而是隐藏起来，display="none"</p>
+</div>
+
+<div class="xunhuan">
+  <!--遍历一个数组里面的数据-->
+  <ul>
+    <li v-for="xianshi in liebiao">{{xianshi.name}}|{{xianshi.age}}岁</li><!--类似于for in循环，把数据拿出来，xianshi是自定义的，被循环的数据可以是一个对象也可以是一个数，如10，它会打印1-10，也可以是一个字符串，它会挨个打印每一个字符-->
+    <li v-for="(xianshi,i) in liebiao">{{i}}</li><!--显示列表索引的方法-->
+  </ul>
+  <!--遍历一个对象里面属性名和属性值和索引的数据,value是自定义的-->
+  <p v-for="(value,prop,index) in duixiang">{{value}}|{{prop}}|{{index}} </p>
+  <!--点击按钮就增加一个dom节点-->
+  <button @click="add">增加一个dom节点</button>
+  
+</div>
+<script src="../js/vue-5.js"></script>
+</body>
+</html>

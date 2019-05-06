@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>购物车示例</title>
+<link href="../css/vue-shop.css" rel="stylesheet" type="text/css"/>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div class="app" >
+        <table  border="1"><!--设置一个表格-->
+            <tr>
+                <td>商品编号</td>
+                <td>商品名称</td>
+                <td>商品价格</td>
+                <td>购买数量</td>
+                <td>删除商品</td>
+            </tr>
+            <tr v-for="(shop,index) in list"><!--v-for in循环数据-->
+               <td>{{shop.id}}</td>
+               <td>{{shop.shop}}</td>
+               <td>{{shop.qian}}</td>
+               <td>
+                   <button @click="jiayi(index)">+</button>
+                   {{shop.shu}}
+                   <button @click="jianyi(index)">-</button>
+               </td>
+               <td><button @click="sanchu(index)">删除商品</button></td>
+           </tr>
+        </table>
+        <div>总价钱：{{zongjia}}元</div>
+        <p v-pre>{{这里的数据不会被大括号编译，而是直接显示出来}}</p>
+
+    </div>
+    
+<script src="../js/vue-shop.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,15 @@
+.sh{
+	width:100px;
+	height:100px;
+	background-color:green;
+	display:inline-block;
+}
+.yuan{
+	border-radius:50%;
+}
+.lanse{
+	background-color:blue;
+}
+.hongse{
+	background-color:red;
+}
